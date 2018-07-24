@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FlatDb\FlatDb.Core\FlatDb.Core.csproj" />
+    <ProjectReference Include="..\FlatDb.Core\FlatDb.Core.csproj" />
   </ItemGroup>
 
 </Project>

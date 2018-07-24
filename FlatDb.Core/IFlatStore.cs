@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace FlatDb.Core
 {
-    public interface IFlatStore<TIdentifier, T>: IQueryable<T>
+    public interface IFlatStore<TIdentifier, T>: IOrderedQueryable<T>
     {
         T Save(T item, Expression<Func<T, TIdentifier>> identifier);
         T Load(TIdentifier identifier);
