@@ -14,14 +14,13 @@ namespace FlatDb.Console
 
         static void Main(string[] args)
         {
+            var item = new MyItem { Id = Guid.NewGuid().ToString(), Name = "MyName" };
+
             var store = new FlatStore<string, MyItem>();
-            var item = new MyItem {Id = Guid.NewGuid().ToString(), Name = "MyName"};
+            var itemFromStore = store.Load("Id");
+            var items = store.Where(x => x.Name == "MyName");
 
             store.Save(item, x => x.Id);
-
-            var itemFromStore = store.Load("Id");
-
-            var items = store.Where(x => x.Name == "MyName");
 
             store.Delete(item.Id);
         }
